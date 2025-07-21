@@ -4,11 +4,11 @@
 
 Стили проекта сгруппированы по функциональным модулям, отражающим ключевые области интерфейса — такие как шапка, подвал и общие компоненты, что упрощает навигацию по коду и его сопровождение. Вёрстка выполнена на чистом HTML5, CSS3, JavaScript с использованием методологии БЭМ (Блок, Элемент, Модификатор), обеспечивающей структурированность и возможность повторного использования решений.
 
-<img width="427" height="930" alt="Screenshot (1)" src=https://github.com/user-attachments/assets/786f7b1e-4ab3-453d-9c92-8cc4b77642be" />
-![Снимок экрана 2025-06-29 121101](<img width="426" height="941" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/19c464f1-06a8-402d-b29e-c9a0f845a655" />)
-![Снимок экрана 2025-06-29 121101](<img width="426" height="926" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/c3c2013b-1c66-442b-b858-8fd9795242ad" />)
-![Снимок экрана 2025-06-29 121101](<img width="426" height="931" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/48500e1c-64bd-48b8-bd15-6e86b67dfdea" />)
-![Снимок экрана 2025-06-29 121101](<img width="427" height="929" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/c4500405-fe8b-4d8a-b0f2-dd8531ffb49b" />)
+![Снимок экрана 2025-06-29 121101](https://github.com/user-attachments/assets/786f7b1e-4ab3-453d-9c92-8cc4b77642be)
+![Снимок экрана 2025-06-29 121101](https://github.com/user-attachments/assets/19c464f1-06a8-402d-b29e-c9a0f845a655)
+![Снимок экрана 2025-06-29 121101](https://github.com/user-attachments/assets/c3c2013b-1c66-442b-b858-8fd9795242ad)
+![Снимок экрана 2025-06-29 121101](https://github.com/user-attachments/assets/48500e1c-64bd-48b8-bd15-6e86b67dfdea)
+![Снимок экрана 2025-06-29 121101](https://github.com/user-attachments/assets/c4500405-fe8b-4d8a-b0f2-dd8531ffb49b)
 
 ## Стек технологий
 - **HTML5**
