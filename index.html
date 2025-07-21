@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Wallet</title>
+  <link rel="icon" href="./images/rabbit.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/components.css">
+  <link rel="stylesheet" href="./styles/header.css">
+  <link rel="stylesheet" href="./styles/page.css">
+  <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/popup.css">
+
+  <!-- Scripts -->
+  <script src="./scripts/app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="interactive">
+        <div class="custom-select" id="custom-select-stars">
+          <div class="custom-select__selected">
+            <img src="./images/rabbit.svg" alt="Rabbit">
+            <span>Stars</span>
+            <span class="custom-select__arrow">
+              <img src="./images/chevron-down.svg" alt="Chevron down" />
+            </span>
+          </div>
+          <div class="custom-select__options">
+            <div class="custom-select__option" data-value="star">
+              <img src="./images/rabbit.svg" alt="Rabbit">
+              Stars
+            </div>
+            <div class="custom-select__option" data-value="star2">
+              <img src="./images/rabbit.svg" alt="Rabbit">
+              Star 2
+            </div>
+            <div class="custom-select__option" data-value="star3">
+              <img src="./images/rabbit.svg" alt="Rabbit">
+              Star 3
+            </div>
+          </div>
+        </div>
+        <input type="hidden" name="stars" class="input-select" value="star" />
+        <button class="settings" data-popup-target="settings-popup">
+          <img src="./images/settings.svg" alt="Settings">
+          <div class="settings__notification"></div>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <!-- Main menu -->
+    <section class="section">
+      <div class="section__wrapper">
+        <div class="wallet-status">
+          <div class="wallet-status__info">
+            <span class="wallet-status__balance">$0</span>
+            <img src="./images/battery.svg" alt="Battery">
+          </div>
+          <p class="wallet-status__address">Ваш адрес: FKLJF...fekfe <span class="adress_green">W5</span></p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__wrapper">
+        <div class="section__wallet-actions">
+          <button class="quick-action" data-popup-target="send-popup">
+              <img src="./images/arrow-narrow-up.svg" alt="Arrow narrow up">
+              <div class="quick-action__text" >Отправить</div>
+          </button>
+          <button class="quick-action" data-popup-target="get-popup">
+              <img src="./images/arrow-narrow-down.svg" alt="Arrow narrow down">
+              <div class="quick-action__text">Получить</div>
+          </button>
+          <button class="quick-action" data-popup-target="scan-popup">
+              <img src="./images/scan.svg" alt="Scan">
+              <div class="quick-action__text">Сканировать</div>
+          </button>
+          <button class="quick-action" data-popup-target="swap-popup">
+              <img src="./images/switch-vertical.svg" alt="Switch vertical">
+              <div class="quick-action__text">Обменять</div>
+          </button>
+          <button class="quick-action" data-popup-target="buy-popup">
+              <img src="./images/currency-dollar.svg" alt="Currency dollar">
+              <div class="quick-action__text">Купить TON</div>
+          </button>
+          <button class="quick-action" data-popup-target="staking-popup">
+              <img src="./images/bar-chart.svg" alt="Bar chart">
+              <div class="quick-action__text">Застейкать</div>
+          </button>
+        </div>
+      </div>
+    </section>  
+    <section class="section">
+      <div class="section__wrapper">
+        <div class="section__title">Завершить установку</div>
+        <div class="section__block">
+          <div class="block-element">
+            <img class="block-element__logo" src="./images/telegram.svg" alt="Telegram">
+            <div class="block-element__info">
+              <span class="info-title">Присоединяйтесь к каналу NAME </span>
+              <a class="btn-oval" href="#">Открыть</a>
+            </div>
+          </div>
+          <hr >
+          <div class="block-element">
+            <img class="block-element__logo" src="./images/key.svg" alt="">
+            <div class="block-element__info">
+              <span class="info-title">Создайте резервную копию секретного ключа кошелька</span>
+              <a class="info-link" href="#">
+                <img src="./images/chevron-right.svg" alt="Chevron right">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="block-element section__cur-element">
+          <img class="block-element__logo" src="./images/ton.svg" alt="Ton">
+          <div class="cur-info">
+            <div class="cur-info__name">TON</div>
+            <div class="cur-info__value">0</div>
+            <div class="cur-info__status">
+              <span class="status-cur-dollars">$3,027</span>
+              <span class="status-cur-percentages">+0.35%</span>
+            </div>
+            <div class="currency-value-dollars">$0</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li>
+            <button class="btn btn_nav">
+              <img src="./images/wallet.svg" alt="Wallet">
+              <div class="list-text">Кошелек</div>
+            </button>
+          </li>
+          <li>
+            <button class="btn btn_nav" data-popup-target="history">
+              <img src="./images/clock.svg" alt="Clock">
+              <div class="list-text">История</div>
+            </button>
+          </li>
+          <li>
+            <button class="btn btn_nav">
+              <img src="./images/compass.svg" alt="Compass">
+              <div class="list-text">Приложение</div>
+            </button>
+          </li>
+          <li>
+            <button class="btn btn_nav">
+              <img src="./images/folder.svg" alt="Folder">
+              <div class="list-text">Коллекции</div>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Settings Popup -->
+  <div id="settings-popup" class="footer-popup popup-to-left">
+    <div class="popup__wrapper">
+      <div class="interactive">
+        <button class="btn popup__close interactive__btn">
+          <img src="./images/chevron-left.svg" alt="Chevron left">
+        </button>
+        <div class="interactive__title">Настройки</div>
+      </div>
+      <div class="customization-block">
+        <img class="customization-block__avatar" src="./images/rabbit.svg" alt="Rabbit">
+        <div class="customization-block__go-over">
+          <div class="block-description">
+            <div class="block-description__text">stars<span class="adress_green">W5</span></div>
+            <p class="block-description__p">Кастомизировать</p>
+          </div>
+          <button class="btn">
+            <img src="./images/chevron-right.svg" alt="Chevron right" width="20" height="20">
+          </button>
+        </div>
+      </div>
+      <div class="blocks-menu">
+        <button class="blocks-menu__el">
+          <div>Резервная копия <span class="notification"></span></div>
+          <img src="./images/settings-key.svg" alt="">
+        </button>
+        <hr>
+        <button class="blocks-menu__el">
+          <div>Уведомления</div>
+          <img src="./images/notification.svg" alt="">
+        </button>
+        <hr>
+        <button class="blocks-menu__el" data-popup-target="main-currency-popup">
+          <div>Валюта</div>
+          <img src="./images/currency-dollar-circle.svg" alt="">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Кошелек v4R2</div>
+          <img src="./images/wallet-blue.svg" alt="">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Батарейка</div>
+          <img class="rotate" src="./images/battery-low.svg" alt="">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Подключенные приложения</div>
+          <img src="./images/grid.svg" alt="">
+        </button>
+      </div>
+      <div class="select-block">
+        <div class="section__block__text-wrapper">
+          <div class="select-block__title">USDT<span class="title-correction">TRC20</span></div>
+          <p class="section__block__p">Используйте USDT TRC20 без TRX. Комиссии оплачиваются с помощью батарейки Tonkeeper</p>
+        </div>
+        <div class="switcher">
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="blocks-menu">
+        <button class="blocks-menu__el">
+          <div>Безопасность</div>
+          <img src="./images/lock.svg" alt="">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Тема</div>
+          <div class="settings-el-text">Deep Blue</div>
+        </button>
+        <button class="blocks-menu__el">
+          <div>Поиск</div>
+          <div class="settings-el-text">DuckDuckGo</div>
+        </button>
+      </div>
+      <div class="blocks-menu">
+        <button class="blocks-menu__el">
+          <div>FAQ<span class="notification"></span></div>
+          <img src="./images/faq.svg" alt="FAQ">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Поддержка<span class="notification"></span></div>
+          <img src="./images/tg-icon-blue.svg" alt="Telegram icon">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Новости Tonkeeper<span class="notification"></span></div>
+          <img src="./images/tg-icon.svg" alt="Telegram icon">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Написать команде<span class="notification"></span></div>
+          <img src="./images/message.svg" alt="Message">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Оценить Tonkeeper<span class="notification"></span></div>
+          <img src="./images/star.svg" alt="Star">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Удалить аккаунт<span class="notification"></span></div>
+          <img src="./images/trash.svg" alt="Trash">
+        </button>
+        <button class="blocks-menu__el">
+          <div>Юридические документы<span class="notification"></span></div>
+          <img src="./images/file.svg" alt="File">
+        </button>
+      </div>
+      <div class="blocks-menu blocks-menu_end">
+        <button class="blocks-menu__el">
+          <div>Выйти<span class="stars"></span></div>
+          <img src="./images/exit-blue.svg" alt="Exit">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Currency Popup -->
+  <div id="main-currency-popup" class="footer-popup popup-to-left">
+    <div class="popup__wrapper">
+      <div class="popup__header popup__header-single-el">
+        <button type="button" class="btn btn_circle popup__close popup__close-left">
+          <img src="./images/chevron-left.svg" alt="Chevron left" width="20" height="20">
+        </button>
+        <div class="main-currency-popup">Основная валюта</div>
+      </div>
+      <div class="blocks-menu">
+        <button class="blocks-menu__el">
+          <div class="cur-title">JPY <span class="additional-cur-pruning">Японская йена</span><span class="notification"></span></div>
+        </button>
+        <hr>
+        <button class="blocks-menu__el">
+          <div class="cur-title">USD <span class="additional-cur-pruning">Доллар США</span></div>
+        </button>
+        <hr>
+        <button class="blocks-menu__el" data-popup-target="main-currency-popup">
+          <div class="cur-title">EUR <span class="additional-cur-pruning">Евро</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">RUB <span class="additional-cur-pruning">Российский рубль</span></div>
+          <img src="./images/check.svg" alt="Check">
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">AED <span class="additional-cur-pruning">Дирхам ОАЭ</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">KZT <span class="additional-cur-pruning">Казахстанский тенге</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">UAH <span class="additional-cur-pruning">Украинская гривна</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">GBP <span class="additional-cur-pruning">Фунт стерлингов</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">CHF <span class="additional-cur-pruning">Швейцарский франк</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">CNY <span class="additional-cur-pruning">Китайский юань</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">KRW <span class="additional-cur-pruning">Южнокорейская вона</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">IDR <span class="additional-cur-pruning">Индонезийская рупия</span></div>
+        </button>
+        <button class="blocks-menu__el">
+          <div class="cur-title">INR <span class="additional-cur-pruning">Индийская рупия</span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Send Popup -->
+  <div id="send-popup" class="popup popup-to-top">
+    <div class="popup__wrapper">
+      <div class="popup__wrap-title">
+        <div class="send-popup__title">Отправить</div>
+        <button type="button" class="btn btn_circle popup__close popup__close-right">
+          <img src="./images/x-close.svg" alt="Close" width="20" height="20">
+        </button>
+      </div>
+      <form action="" class="send-popup__form">
+        <div class="send-popup__field">
+          <input class="input input-default" type="text" placeholder="Адресс или имя" size="5">
+          <div class="field-btn-wrapper">
+            <button class="btn btn-oval btn-field" type="button">Вставить</button>
+            <button class="btn btn-field-second" type="button">
+              <img src="./images/scan.svg" alt="Scan" width="20" height="20">
+            </button>
+          </div>
+        </div>
+        <div class="send-popup__field">
+          <input class="input input-with-label" type="tel" id="sum" value="0">
+          <label for="sum" class="label-field">Сумма</label>
+          <div class="custom-select" id="custom-select-send">
+            <div class="custom-select__selected">
+              <img src="./images/ton.svg" alt="Rabbit" />
+              <span>TON</span>
+              <span class="custom-select__arrow">
+                <img src="./images/chevron-down.svg" alt="Chevron down">
+              </span>
+            </div>
+            <div class="custom-select__options">
+              <div class="custom-select__option" data-value="star">
+                <img src="./images/ton.svg" alt="" />
+                TON
+              </div>
+              <div class="custom-select__option" data-value="star1">
+                <img src="./images/ton.svg" alt="" />
+                BTC
+              </div>
+              <div class="custom-select__option" data-value="star2">
+                <img src="./images/ton.svg" alt="" />
+                TCP
+              </div>
+            </div>
+          </div>
+          <input type="hidden" name="stars" class="input-select" value="star" />
+        </div>
+        <div class="send-popup__description">
+          <div class="approximate-amount">≈ $0</div>
+          <div class="wallet-balance-info">
+            <span class="wallet-balance-info__available">Доступно 0 TON</span>
+            <span class="wallet-balance-info__meaning">MAX</span>
+          </div>
+        </div>
+        <div class="send-popup__field">
+          <input class="input input-default" type="text" placeholder="Комментарий">
+          <button type="button" class="btn btn-oval btn-field-only">Вставить</button>
+        </div>
+        <button type="submit" class="btn btn_submit">Продолжить</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Get Popup -->
+  <div id="get-popup" class="popup popup-to-top">
+    <div class="popup__wrapper">
+      <div class="popup__wrap-title">
+        <button type="button" class="btn btn_circle popup__close popup__close-left">
+          <img src="./images/x-close.svg" alt="Close" width="26px" height="26px">
+        </button>
+        <div class="network-switch">
+          <div class="network-switch__slider"></div>
+          <button type="button" class="network-switch__option active" data-network="TON">TON</button>
+          <button type="button" class="network-switch__option" data-network="TRC20">TRC20</button>
+        </div>
+      </div>
+      <div class="get-popup__title">Получить Toncoin</div>
+      <p class="get-popup__paragraph">
+        Отправляйте на этот адрес только Toncoin и токены в сети TON, 
+        иначе вы можете потерять свои средства.
+      </p>
+      <div id="qrcode">
+        <img src="./images/qr-code.svg" alt="QR code" width="324px" height="324px">
+      </div>
+      <div class="get-popup__btn-wrapper">
+        <button type="button" class="btn btn-oval get-popup__btn">
+          <img src="./images/copy.svg" alt="Copy" width="16" height="16">
+          Скопировать
+        </button>
+        <button type="button" class="btn btn_circle btn_circle-small">
+          <img src="./images/upload.svg" alt="Upload" width="16" height="16">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swap Popup -->
+  <div id="swap-popup" class="popup popup-to-top">
+    <div class="popup__wrapper">
+      <div class="popup__header">
+        <div class="popup-header-settings">
+          <button class="btn btn-settings-first">
+            <img src="./images/refresh.svg" alt="Refresh" width="16" height="16">
+          </button>
+          <button class="btn btn-settings-second">
+            <img src="./images/settings-filter.svg" alt="Settings filter" width="16" height="16">
+          </button>
+        </div>
+        <div class="swap-popup__title">Swap</div>
+        <div class="swap-popup__close">
+          <button class="btn popup__close">
+            <img src="./images/x-close.svg" alt="Close" width="20" height="20">
+          </button>
+        </div>
+      </div>
+      <div class="popup__body">
+        <div class="widgets_wrapper">
+          <div class="swap-popup__widget swap-popup__send">
+            <div class="widget-header">
+              <div class="widget-header__title">Send</div>
+              <div class="status-wrapper">
+                <div class="widget-header__balance">Balance: 0</div>
+                <div class="widget-header__max">MAX</div>
+              </div>
+            </div>
+            <div class="widget-body">
+              <div class="custom-select custom-select-transparent custom-select-bg-none">
+                <div class="custom-select__selected custom-select__selected-transparent">
+                  <img src="./images/ton.svg" alt="Rabbit" />
+                  <span>TON</span>
+                  <span class="custom-select__arrow">
+                    <img src="./images/chevron-selector-vertical.svg" alt="Chevron down">
+                  </span>
+                </div>
+                <div class="custom-select__options">
+                  <div class="custom-select__option" data-value="star">
+                    <img src="./images/ton.svg" alt="" />
+                    TON
+                  </div>
+                  <div class="custom-select__option" data-value="star1">
+                    <img src="./images/ton.svg" alt="" />
+                    BTC
+                  </div>
+                  <div class="custom-select__option" data-value="star2">
+                    <img src="./images/ton.svg" alt="" />
+                    TCP
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="stars" class="input-select" value="star">
+              <input class="input input_red widget-body__input" type="number" placeholder="0" min="0">
+            </div>
+            <div class="widget__approx-value">≈ $3,01</div>
+          </div>
+          <div class="swap-popup__widget swap-popup__receive">
+            <div class="widget-header">
+              <div class="widget-recieve">Recieve</div>
+              <div class="widget-balance">Balance: 0</div>
+            </div>
+            <div class="widget-body">
+              <div class="custom-select custom-select-transparent custom-select-bg-none">
+                <div class="custom-select__selected custom-select__selected-transparent">
+                  <img src="./images/ton.svg" alt="Rabbit" />
+                  <span>TON</span>
+                  <span class="custom-select__arrow">
+                    <img src="./images/chevron-selector-vertical.svg" alt="Chevron down">
+                  </span>
+                </div>
+                <div class="custom-select__options">
+                  <div class="custom-select__option" data-value="star">
+                    <img src="./images/ton.svg" alt="" />
+                    TON
+                  </div>
+                  <div class="custom-select__option" data-value="star1">
+                    <img src="./images/ton.svg" alt="" />
+                    BTC
+                  </div>
+                  <div class="custom-select__option" data-value="star2">
+                    <img src="./images/ton.svg" alt="" />
+                    TCP
+                  </div>
+                </div>
+              </div>
+              <input type="hidden" name="stars" class="input-select" value="star">
+              <input class="input widget-body__input" type="number" value="0.00" min="0" max="100" step="0.01">
+            </div>
+            <div class="widget-footer">
+              <div class="footer-description">1 TON ≈ 3,01 USDT</div>
+              <div class="footer-description">≈ $3,01</div>
+            </div>
+          </div>
+          <div class="btn_switch">
+            <button class="btn btn_circle">
+              <img src="./images/switch-vertical.svg" alt="Switch vertical" width="20" height="20">
+            </button>
+          </div>
+        </div>
+        <select class="basic-select widget-select" name="transition-info">
+          <option class="basic-select__option" value="first">First option</option>
+          <option class="basic-select__option" value="second">Second option</option>
+          <option class="basic-select__option" value="third">Third option</option>
+        </select>
+        <button class="btn btn_widget">Not enough funds</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="buy-popup" class="popup popup-to-top">
+    <div class="popup__wrapper">
+      
+    </div>
+  </div> -->
+  <div id="staking-popup" class="popup popup-to-top">
+    <div class="popup__wrapper">
+      <div class="popup__header">
+        <button class="btn btn_circle">
+          <img src="./images/info-circle.svg" alt="Info" width="20" height="20">
+        </button>
+        <div class="staking-popup__title">Стейкинг</div>
+        <button class="btn btn_circle popup__close">
+          <img src="./images/x-close.svg" alt="Close" width="20px" height="20px">
+        </button>
+      </div>
+      <div class="popup__body">
+        <form action="">
+          <div class="widget-balance-swap">
+            <div class="widget-balance-swap__enter">
+              <input
+                class="balance-input"
+                type="tel"
+                placeholder="0"
+                min="0"
+                step="1"
+              />
+              <span class="asset-label">TON</span>
+            </div>
+            <div class="widget-balance-swap__usd-value">0 USD</div>
+          </div>
+          <div class="widget-description">
+            <div class="widget-description__max">MAX</div>
+            <div class="widget-description__status">Доступно: 0 TON</div>
+          </div>
+          <div class="custom-widget-select">
+            <div class="custom-widget-select__wrapper">
+              <div class="custom-widget-select__icon">
+                <img src="./images/ton.svg" alt="">
+              </div>
+              <div class="custom-widget-select__info">
+                <div class="info-status">
+                  <span class="info-status__title">Tonstakers</span>
+                  <span class="info-status__max-apy adress_green">MAX APY</span>
+                </div>
+                <div class="info-description">APY ≈ 3,34%</div>
+              </div>
+            </div>
+            <div class="switch">
+              <img src="./images/chevron-selector-vertical.svg" alt="">
+            </div>
+            <div class="custom-widget-select__options">
+              <div class="custom-widget-select__option" data-value="data">
+                <img class="option-img" src="./images/ton.svg" alt="" />
+                Tonstakers
+              </div>
+              <hr>
+              <div class="custom-widget-select__option" data-value="data1">
+                <img class="option-img" src="./images/bar-chart.svg" alt="" />
+                BTC
+              </div>
+              <hr>
+              <div class="custom-widget-select__option" data-value="data2">
+                <img class="option-img" src="./images/battery.svg" alt="" />
+                TCP
+              </div>
+            </div>
+            <input type="hidden" name="data" class="input-widget-select" value="data">
+          </div>
+          <button type="submit" class="btn btn_submit">Продолжить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="history" class="footer-popup popup-to-top popup-nav-menu">
+    <nav class="nav history__nav">
+      <ul class="nav__list-history">
+        <li class="list-el">
+          <button class="btn btn-oval list-el__btn">Все</button>
+        </li>
+        <li class="list-el">
+          <button class="btn btn-oval list-el__btn">Спам</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="popup__wrapper">
+      <div class="popup__wrap-title popup__header-history">
+        <div class="send-popup__title">История</div>
+        <button type="button" class="btn btn_circle popup__close popup__close-right">
+          <img src="./images/x-close.svg" alt="Close" width="20" height="20">
+        </button>
+      </div>
+      <div class="history__body">
+        <div class="history-title">Апрель</div>
+        <div class="history-block_wrapper">
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+          <button class="btn history-block" data-popup-target="remittance-info">
+            <div class="history-block__img">
+              <img src="./images/upload-v1.svg" alt="Upload">
+            </div>
+            <div class="history-block__content-wrap">
+              <div class="history-block__status">
+                <div class="status-state">Отправлено</div>
+                <p class="status-comment">Ujjfjf....dwaa</p>
+                <div class="status-code">65848488</div>
+              </div>
+              <div class="history-block__amount-status">
+                <div class="status-total">-6,21 TON</div>
+                <p class="status-date">27 апр., 14:46</p>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="remittance-info" class="popup popup-to-top popup-to-top_understated">
+    <div class="popup__wrapper">
+      <div class="popup__header">
+        <img src="" alt="">
+        <button class="btn btn_circle popup__close">
+          <img src="./images/x-close.svg" alt="Close" width="20px" height="20px">
+        </button>
+      </div>
+      <div class="popup__body">
+        <img class="popup-remittance-img" src="./images/ton.svg" alt="Ton">
+        <div class="popup-remittance-cryptocurrency">-6,21 TON</div>
+        <p class="popup-remittance-currency">$18,76</p>
+        <p class="popup-remittance-date">Отправлено 27 апр., 14:46</p>
+      </div>
+      <div class="blocks-menu">
+        <div class="blocks-menu__el blocks-menu__el-history-header">
+          <p class="block-el-history-paragraph">Адресс получателя</p>
+          <div class="block-el-history-title">OIJHGOUJWSOEJJSOMKFEA</div>
+        </div>
+        <hr>
+        <div class="blocks-menu__el blocks-menu__el-history-body">
+          <p class="block-el-history-left">Комиссия</p>
+          <div class="block-el-history-right">
+            <div class="block-el-history__title">0,003030023022 TON</div>
+            <div class="block-el-history__description">$0,0071</div>
+          </div>
+        </div>
+        <div class="blocks-menu__el blocks-menu__el-history-body">
+          <p class="block-el-history-left">Комментарий</p>
+          <div class="block-el-history__title">98372987432</div>
+        </div>
+      </div>
+      <a href="#" class="btn btn-oval remittance-info__btn">
+        <img src="./images/globe.svg" alt="Globe">
+        <span class="remittance-btn-title">Транзакция</span>
+        <span class="remittance-btn-description">22248e1b</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

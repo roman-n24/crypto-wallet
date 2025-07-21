@@ -1,0 +1,59 @@
+:root {
+  --color-bg: #0f1620;
+  --color-bg-switcher: #1e1e1e;
+  --color-bg-select: #2a3342;
+  --color-bg-select-hover: #3d4655;
+  --color-bg-slider: #393f4d;
+  --color-text: #fffefd;
+  --color-text-gray-light: #9ba4ad;
+  --color-text-gray: #878f9b;
+  --color-text-gray-light: #a2aab8;
+  --color-bg-gray-very-light: #313a49;
+  --color-bg-gray-light: #2f3847;
+  --color-bg-gray-dark: #1b1f25;
+  --color-border-gray: #e5e6e711;
+  --color-bg-green: #287059;
+  --color-text-green: #41b993;
+  --color-bg-section-block: #1d2733;
+  --color-bg-section-block-checked: #3a4552;
+  --color-bg-blue: #2196F3;
+  --color-text-blue: #5bb1f1;
+  --color-text-blue-dark: #4a708e;
+  --color-bg-blue-light: rgb(25, 149, 231);
+  --color-text-red: #f23c69;
+  --color-bg-gray-pale: #2f3847;
+  --color-text-gray-dark: #172029;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+form {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  height: 0.5px;
+  border: none;
+  background-color: var(--color-border-gray);
+  margin: 0;
+}
