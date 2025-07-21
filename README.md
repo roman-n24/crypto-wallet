@@ -8,13 +8,13 @@
 
 ## Превью интерфейса
 
-| Главный экран | Модальное окно | Выпадающее меню |
+| Главный экран | Настройки | Модальное окно |
 |:-------------:|:--------------:|:----------------:|
-| ![main](https://github.com/user-attachments/assets/786f7b1e-4ab3-453d-9c92-8cc4b77642be) | ![modal](https://github.com/user-attachments/assets/19c464f1-06a8-402d-b29e-c9a0f845a655) | ![dropdown](https://github.com/user-attachments/assets/c3c2013b-1c66-442b-b858-8fd9795242ad) |
+| ![main](https://github.com/user-attachments/assets/6bfead09-77de-4f95-a163-e64fbed715cc) | ![settings](https://github.com/user-attachments/assets/d7e48d11-41d2-4275-a9cf-1612285c4276) | ![popup](https://github.com/user-attachments/assets/531736ed-fa08-4bb1-a8c3-5f03ce97c9c6) |
 
-| Настройки | Подтверждение |
+| История | Информация о покупке |
 |:---------:|:-------------:|
-| ![settings](https://github.com/user-attachments/assets/48500e1c-64bd-48b8-bd15-6e86b67dfdea) | ![confirm](https://github.com/user-attachments/assets/c4500405-fe8b-4d8a-b0f2-dd8531ffb49b) |
+| ![history](https://github.com/user-attachments/assets/775c330d-285f-4776-b5a8-ab5cc679afaa) | ![purchase-info](https://github.com/user-attachments/assets/18a73062-e9dc-4dbd-b28d-db142cdb2994) |
 
 ## Стек технологий
 
